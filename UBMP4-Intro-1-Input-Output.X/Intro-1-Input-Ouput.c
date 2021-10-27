@@ -32,76 +32,84 @@ int main(void)
     while(1)
 	{
         // If SW2 is pressed, make a flashy light pattern
-        if(SW2 == 0 && SW3 != 0 && SW4 != 0 && SW5 != 0)
-       {
-           LED3 = 1;
-           __delay_ms(100);
-           LED4 = 1;
-           __delay_ms(100);
-           LED5 = 1;
-           __delay_ms(100);
-           LED6 = 1;
-           __delay_ms(100);
-           LED3 = 0;
-           __delay_ms(100);
-           LED4 = 0;
-           __delay_ms(100);
-           LED5 = 0;
-           __delay_ms(100);
-           LED6 = 0;
-           __delay_ms(100);
-       } else if(SW3 == 0 && SW2 != 0 && SW4 != 0 && SW5 != 0) {
-           LED4 = 1;
-           __delay_ms(100);
-           LED5 = 1;
-           __delay_ms(100);
-           LED6 = 1;
-           __delay_ms(100);
-           LED3 = 1;
-           __delay_ms(100);
-           LED4 = 0;
-           __delay_ms(100);
-           LED5 = 0;
-           __delay_ms(100);
-           LED6 = 0;
-           __delay_ms(100);
-           LED3 = 0;
-           __delay_ms(100);
-       } else if (SW4 == 0 && SW5 != 0 && SW2 != 0 && SW3 != 0){
-           LED5 = 1;
-           __delay_ms(100);
-           LED6 = 1;
-           __delay_ms(100);
-           LED3 = 1;
-           __delay_ms(100);
-           LED4 = 1;
-           __delay_ms(100);
-           LED5 = 0;
-           __delay_ms(100);
-           LED6 = 0;
-           __delay_ms(100);
-           LED3 = 0;
-           __delay_ms(100);
-           LED4 = 0;
-           __delay_ms(100);
-       } else if(SW5 == 0 && SW2 != 0 && SW3 != 0 && SW4 != 0){
-           LED6 = 1;
-           __delay_ms(100);
-           LED3 = 1;
-           __delay_ms(100);
-           LED4 = 1;
-           __delay_ms(100);
-           LED5 = 1;
-           __delay_ms(100);
-           LED6 = 0;
-           __delay_ms(100);
-           LED3 = 0;
-           __delay_ms(100);
-           LED4 = 0;
-           __delay_ms(100);
-           LED5 = 0;
-           __delay_ms(100);
-       }
+    //     if(SW2 == 0 && SW3 != 0 && SW4 != 0 && SW5 != 0)
+    //    {
+    //        LED3 = 1;
+    //        __delay_ms(100);
+    //        LED4 = 1;
+    //        __delay_ms(100);
+    //        LED5 = 1;
+    //        __delay_ms(100);
+    //        LED6 = 1;
+    //        __delay_ms(100);
+    //        LED3 = 0;
+    //        __delay_ms(100);
+    //        LED4 = 0;
+    //        __delay_ms(100);
+    //        LED5 = 0;
+    //        __delay_ms(100);
+    //        LED6 = 0;
+    //        __delay_ms(100);
+    //    } else if(SW3 == 0 && SW2 != 0 && SW4 != 0 && SW5 != 0) {
+    //        LED4 = 1;
+    //        __delay_ms(100);
+    //        LED5 = 1;
+    //        __delay_ms(100);
+    //        LED6 = 1;
+    //        __delay_ms(100);
+    //        LED3 = 1;
+    //        __delay_ms(100);
+    //        LED4 = 0;
+    //        __delay_ms(100);
+    //        LED5 = 0;
+    //        __delay_ms(100);
+    //        LED6 = 0;
+    //        __delay_ms(100);
+    //        LED3 = 0;
+    //        __delay_ms(100);
+    //    } else if (SW4 == 0 && SW5 != 0 && SW2 != 0 && SW3 != 0){
+    //        LED5 = 1;
+    //        __delay_ms(100);
+    //        LED6 = 1;
+    //        __delay_ms(100);
+    //        LED3 = 1;
+    //        __delay_ms(100);
+    //        LED4 = 1;
+    //        __delay_ms(100);
+    //        LED5 = 0;
+    //        __delay_ms(100);
+    //        LED6 = 0;
+    //        __delay_ms(100);
+    //        LED3 = 0;
+    //        __delay_ms(100);
+    //        LED4 = 0;
+    //        __delay_ms(100);
+    //    } else if(SW5 == 0 && SW2 != 0 && SW3 != 0 && SW4 != 0){
+    //        LED6 = 1;
+    //        __delay_ms(100);
+    //        LED3 = 1;
+    //        __delay_ms(100);
+    //        LED4 = 1;
+    //        __delay_ms(100);
+    //        LED5 = 1;
+    //        __delay_ms(100);
+    //        LED6 = 0;
+    //        __delay_ms(100);
+    //        LED3 = 0;
+    //        __delay_ms(100);
+    //        LED4 = 0;
+    //        __delay_ms(100);
+    //        LED5 = 0;
+    //        __delay_ms(100);
+    //    }
+
+            if(SW3 == 0)
+            {
+            BEEPER = 1;
+            __delay_us(1991.47);
+            BEEPER = 0;
+            __delay_us(1991.47);
+            }
 
         
         // Add code for your Program Analysis and Programming Activities here:
