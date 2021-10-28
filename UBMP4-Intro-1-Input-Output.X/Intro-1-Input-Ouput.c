@@ -32,12 +32,28 @@ int main(void)
     while(1)
 	{
         // If SW2 is pressed, make a flashy light pattern
-            // if(SW3 == 0){
-            // LED4 = 1;
-            // } else if(SW3 != 0) {
-            // LED4 = 0;
-            // }
-  
+           //LED for the BEEPER sounds
+            if(SW2 == 0){
+            LED3 = 1;
+            } else if(SW2 != 0) {
+            LED3 = 0;
+            } 
+            if(SW3 == 0){
+            LED4 = 1;
+            } else if(SW3 != 0){
+            LED4 = 0;
+            }
+            if(SW4 == 0){
+            LED5 = 1;
+            } else if(SW4 != 0){
+            LED5 = 0;
+            }
+            if(SW5 == 0){
+            LED6 = 1;
+            } else if(SW5 != 0){
+            LED6 = 0;
+            }
+    // LED flashes loop
     //     if(SW2 == 0 && SW3 != 0 && SW4 != 0 && SW5 != 0)
     //    {
     //        LED3 = 1;
@@ -127,6 +143,7 @@ int main(void)
             // BEEPER = 0;
             // __delay_us(887.10);
             // }
+            //BEEPER sounds
             if(SW2 == 0)
             {
                 BEEPER = !BEEPER;
@@ -162,18 +179,20 @@ int main(void)
      //When SW2 is held, the lights goes infinite loop but if it's pressed, it goes 1 loop.
  * 
  * 2. Explain the difference between the statements: LED3 = 0; and LED3 = 1;
- * 
+ *   // LED3 = 1 means itś on and 0 means itś off.
  * 3. What voltage do you expect the microcontroller to output to LED D3 when
  *    the statement LED3 = 0; runs? What voltage do you expect the output to be
  *    when the statement LED3 = 1; runs?
- * 
+ *  //WHenthe LED3 runs, the expected voltage would be 5V.
  *    You can confirm the output voltage with a voltmeter if you have access
  *    to one. If you tried that, did the voltage match your prediction?
+     // It did not match my prediciton but itś at 4.6V.
  * 
  * 4. The statement 'if(SW2 == 0)' uses two equal signs, while the statement
  *    'LED3 = 1;' uses a single equal sign. What operation is performed by one
  *    equal sign? What operation is performed by two equal signs?
- * 
+ *    The single equal sign will change the value of a variable into a different value.
+      The double equal sign will do a comaprison
  * 5. The following program code includes instructions that write to the PORTC
  *    output latches directly. Try it by copying and pasting this code below
  *    the existing SW2 'if' structure, at the location shown by the comment.
@@ -189,7 +208,9 @@ int main(void)
  *    What happens when pushbutton SW3 is pressed? Identify at least one
  *    advantage and one disadvantage of controlling the LEDs using 'LATC' writes
  *    rather than through individual 'LEDn = x;' statements.
- * 
+ *     When SW3 is pressed, all of the LED is flashed.
+       The advantage is you can control all of the LED at the same time.
+       The disadvantage is that you can't do other buttons.
  * 6. Next, compare the operation of 'if' and 'while' structures to simulate
  *    momentary buttons. Replace the code you added in 5, above, with this code:
 
