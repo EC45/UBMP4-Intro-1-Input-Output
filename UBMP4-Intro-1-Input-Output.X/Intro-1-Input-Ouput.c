@@ -32,76 +32,82 @@ int main(void)
     while(1)
 	{
         // If SW2 is pressed, make a flashy light pattern
-        if(SW2 == 0 && SW3 != 0 && SW4 != 0 && SW5 != 0)
-       {
-           LED3 = 1;
-           __delay_ms(100);
-           LED4 = 1;
-           __delay_ms(100);
-           LED5 = 1;
-           __delay_ms(100);
-           LED6 = 1;
-           __delay_ms(100);
-           LED3 = 0;
-           __delay_ms(100);
-           LED4 = 0;
-           __delay_ms(100);
-           LED5 = 0;
-           __delay_ms(100);
-           LED6 = 0;
-           __delay_ms(100);
-       } else if(SW3 == 0 && SW2 != 0 && SW4 != 0 && SW5 != 0) {
-           LED4 = 1;
-           __delay_ms(100);
-           LED5 = 1;
-           __delay_ms(100);
-           LED6 = 1;
-           __delay_ms(100);
-           LED3 = 1;
-           __delay_ms(100);
-           LED4 = 0;
-           __delay_ms(100);
-           LED5 = 0;
-           __delay_ms(100);
-           LED6 = 0;
-           __delay_ms(100);
-           LED3 = 0;
-           __delay_ms(100);
-       } else if (SW4 == 0 && SW5 != 0 && SW2 != 0 && SW3 != 0){
-           LED5 = 1;
-           __delay_ms(100);
-           LED6 = 1;
-           __delay_ms(100);
-           LED3 = 1;
-           __delay_ms(100);
-           LED4 = 1;
-           __delay_ms(100);
-           LED5 = 0;
-           __delay_ms(100);
-           LED6 = 0;
-           __delay_ms(100);
-           LED3 = 0;
-           __delay_ms(100);
-           LED4 = 0;
-           __delay_ms(100);
-       } else if(SW5 == 0 && SW2 != 0 && SW3 != 0 && SW4 != 0){
-           LED6 = 1;
-           __delay_ms(100);
-           LED3 = 1;
-           __delay_ms(100);
-           LED4 = 1;
-           __delay_ms(100);
-           LED5 = 1;
-           __delay_ms(100);
-           LED6 = 0;
-           __delay_ms(100);
-           LED3 = 0;
-           __delay_ms(100);
-           LED4 = 0;
-           __delay_ms(100);
-           LED5 = 0;
-           __delay_ms(100);
-       }
+            // if(SW3 == 0){
+            // LED4 = 1;
+            // } else if(SW3 != 0) {
+            // LED4 = 0;
+            // }
+  
+    //     if(SW2 == 0 && SW3 != 0 && SW4 != 0 && SW5 != 0)
+    //    {
+    //        LED3 = 1;
+    //        __delay_ms(100);
+    //        LED4 = 1;
+    //        __delay_ms(100);
+    //        LED5 = 1;
+    //        __delay_ms(100);
+    //        LED6 = 1;
+    //        __delay_ms(100);
+    //        LED3 = 0;
+    //        __delay_ms(100);
+    //        LED4 = 0;
+    //        __delay_ms(100);
+    //        LED5 = 0;
+    //        __delay_ms(100);
+    //        LED6 = 0;
+    //        __delay_ms(100);
+    //    } else if(SW3 == 0 && SW2 != 0 && SW4 != 0 && SW5 != 0) {
+    //        LED4 = 1;
+    //        __delay_ms(100);
+    //        LED5 = 1;
+    //        __delay_ms(100);
+    //        LED6 = 1;
+    //        __delay_ms(100);
+    //        LED3 = 1;
+    //        __delay_ms(100);
+    //        LED4 = 0;
+    //        __delay_ms(100);
+    //        LED5 = 0;
+    //        __delay_ms(100);
+    //        LED6 = 0;
+    //        __delay_ms(100);
+    //        LED3 = 0;
+    //        __delay_ms(100);
+    //    } else if (SW4 == 0 && SW5 != 0 && SW2 != 0 && SW3 != 0){
+    //        LED5 = 1;
+    //        __delay_ms(100);
+    //        LED6 = 1;
+    //        __delay_ms(100);
+    //        LED3 = 1;
+    //        __delay_ms(100);
+    //        LED4 = 1;
+    //        __delay_ms(100);
+    //        LED5 = 0;
+    //        __delay_ms(100);
+    //        LED6 = 0;
+    //        __delay_ms(100);
+    //        LED3 = 0;
+    //        __delay_ms(100);
+    //        LED4 = 0;
+    //        __delay_ms(100);
+    //    } else if(SW5 == 0 && SW2 != 0 && SW3 != 0 && SW4 != 0){
+    //        LED6 = 1;
+    //        __delay_ms(100);
+    //        LED3 = 1;
+    //        __delay_ms(100);
+    //        LED4 = 1;
+    //        __delay_ms(100);
+    //        LED5 = 1;
+    //        __delay_ms(100);
+    //        LED6 = 0;
+    //        __delay_ms(100);
+    //        LED3 = 0;
+    //        __delay_ms(100);
+    //        LED4 = 0;
+    //        __delay_ms(100);
+    //        LED5 = 0;
+    //        __delay_ms(100);
+    //    }
 
             // if(SW3 == 0)
             // {
@@ -114,11 +120,6 @@ int main(void)
             // __delay_us(1329.14);
             // BEEPER = 0;
             // __delay_us(1329.14);
-            // } else if(SW3 == 0){
-            // LED4 = 1;
-            // __delay_ms(200);
-            // LED4 = 0;
-            // __delay_ms(100);
             // } else if(SW4 == 0)
             // {
             // BEEPER = 1;
@@ -126,6 +127,21 @@ int main(void)
             // BEEPER = 0;
             // __delay_us(887.10);
             // }
+            if(SW2 == 0)
+            {
+                BEEPER = !BEEPER;
+                __delay_us(1351.387875); //F4#
+            } else if(SW3 == 0){
+                BEEPER = !BEEPER;
+                __delay_us(1136.363635); //A4
+            } else if(SW4 == 0){
+                BEEPER = !BEEPER;
+                __delay_us(901.924705); //C5#
+            } else if(SW5 == 0){
+                BEEPER = !BEEPER;
+                __delay_us(1702.64932); //D4
+            }
+
 
         
         // Add code for your Program Analysis and Programming Activities here:
@@ -143,6 +159,7 @@ int main(void)
  * 1. How many times do the LEDs flash if SW2 is quickly pressed and released?
  *    Do the LEDs keep flashing when SW2 is held? Look at the program and
  *    explain why this happens when SW2 is held.
+     //When SW2 is held, the lights goes infinite loop but if it's pressed, it goes 1 loop.
  * 
  * 2. Explain the difference between the statements: LED3 = 0; and LED3 = 1;
  * 
