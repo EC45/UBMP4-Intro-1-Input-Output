@@ -72,20 +72,20 @@ int main(void)
            }
   
            //BEEPER sounds
-           // if(SW2 == 0)
-           // {
-           //     BEEPER = !BEEPER;
-           //     __delay_us(1351.387875); //F4#
-           // } else if(SW3 == 0){
-           //     BEEPER = !BEEPER;
-           //     __delay_us(1136.363635); //A4
-           // } else if(SW4 == 0){
-           //     BEEPER = !BEEPER;
-           //     __delay_us(901.924705); //C5#
-           // } else if(SW5 == 0){
-           //     BEEPER = !BEEPER;
-           //     __delay_us(1702.64932); //D4
-           // }
+           if(SW2 == 0)
+           {
+               BEEPER = !BEEPER;
+               __delay_us(1351.387875); //F4#
+           } else if(SW3 == 0){
+               BEEPER = !BEEPER;
+               __delay_us(1136.363635); //A4
+           } else if(SW4 == 0){
+               BEEPER = !BEEPER;
+               __delay_us(901.924705); //C5#
+           } else if(SW5 == 0){
+               BEEPER = !BEEPER;
+               __delay_us(1702.64932); //D4
+           }
            if (SW2 == 0) {
                LED3 = 0;
                note2();
