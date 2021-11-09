@@ -20,7 +20,7 @@ and simulated start-stop button functionality.
  
 // The main function is required, and the program begins executing from here.
 void note(){
-   for(char c = 250; c != 0; c--) {
+   for(char c = 150; c != 0; c--) {
                    BEEPER = !BEEPER;
                    __delay_us(1136.363635);
                    LED4 = !LED4;
@@ -31,13 +31,48 @@ void note(){
     }
 }
 void note2(){
-   for(char c = 250; c != 0; c--) {
+   for(char c = 150; c != 0; c--) {
                    BEEPER = !BEEPER;
                    __delay_us(1351.387875);
                    LED3 = !LED3;
  
        }
 }
+void note3(){
+    for(char c = 150; c != 0; c--) {
+                   BEEPER = !BEEPER;
+                   __delay_us(1702.64932);
+                   LED6 = !LED6;
+       }
+}
+ void note4(){
+     for(char c = 150; c != 0; c--){
+        BEEPER = !BEEPER;
+         __delay_us(1803.881955);
+           LED4 = !LED4;
+     }
+ }
+ void note5(){
+     for(char c = 150; c != 0; c--){
+         BEEPER = !BEEPER;
+         __delay_us(901.924705);
+         LED3 = !LED3;
+     }
+ }
+ void note6(unsigned int cycles){
+     for(cycles; cycles != 0; cycles--){
+         BEEPER = !BEEPER;
+         __delay_us(758.43762);
+         LED5 = !LED5;
+     }
+ }
+ void note7(){
+     for(char c = 150; c != 0; c--){
+         BEEPER = !BEEPER;
+         __delay_us(851.310165);
+         LED6 = !LED6;
+     }
+ }
 int main(void)
 {
    // Configure oscillator and I/O ports. These functions run once at start-up.
@@ -72,20 +107,30 @@ int main(void)
            }
   
            //BEEPER sounds
-           if(SW2 == 0)
-           {
-               BEEPER = !BEEPER;
-               __delay_us(1351.387875); //F4#
-           } else if(SW3 == 0){
-               BEEPER = !BEEPER;
-               __delay_us(1136.363635); //A4
-           } else if(SW4 == 0){
-               BEEPER = !BEEPER;
-               __delay_us(901.924705); //C5#
-           } else if(SW5 == 0){
-               BEEPER = !BEEPER;
-               __delay_us(1702.64932); //D4
-           }
+        //    if(SW2 == 0)
+        //    {
+        //        BEEPER = !BEEPER;
+        //        __delay_us(1351.387875); //F4#
+        //    } else if(SW3 == 0){
+        //        BEEPER = !BEEPER;
+        //        __delay_us(1136.363635); //A4
+        //    } else if(SW4 == 0){
+        //        BEEPER = !BEEPER;
+        //        __delay_us(901.924705); //C5#
+        //    } else if(SW5 == 0){
+        //        BEEPER = !BEEPER;
+        //        __delay_us(1702.64932); //D4
+        //    } else if(SW3 == 0){
+                //   BEEPER = !BEEPER
+                //   __delay_us(1803.881955); //C4#
+            //   } else if(SW4 == 0){
+            //          BEEPER = !BEEPER
+            //          __delay_us(329.625); //E5
+            //   } else if(SW5 ==0){
+            //     BEEPER = !BEEPER
+            //     __delay_us(851.310165); //D5
+            // }
+        
            if (SW2 == 0) {
                LED3 = 0;
                note2();
@@ -102,16 +147,60 @@ int main(void)
                    LED5 = !LED5;
                }
                __delay_ms(250);
+
+               __delay_ms(50);
                note();
-               __delay_ms(250);
+               __delay_ms(100);
+
+               __delay_ms(100);
                note2();
-              
-               // for(c = 250; c != 0; c--) {
-               //     BEEPER = !BEEPER;
-               //     __delay_us(1351.387875);
-               //     LED3 = !LED3;
-              
+               __delay_ms(100);
+               note3();
+               __delay_ms(20);
+
+               note3();
+               __delay_ms(20);
+               
+               note3();
+               __delay_ms(20);
+
                }
+                if(SW3 == 0){
+                 LED4 = 0;
+                 note4();
+                __delay_ms(50);
+
+                note3();
+                __delay_ms(100);
+
+                note2();
+                __delay_ms(100);
+
+                note();
+                __delay_ms(100);
+
+                note5();
+                __delay_ms(100);
+
+                __delay_ms(200);
+
+                note();
+                __delay_ms(100);
+
+                __delay_ms(200);
+                
+                note2();
+                __delay_ms(100);
+
+                note6(600);
+                __delay_ms(250);
+                note6(250);
+                __delay_ms(100);
+                note7();
+                __delay_ms(100);
+
+                
+                }
               
                    if(SW1 == 0)
                {
