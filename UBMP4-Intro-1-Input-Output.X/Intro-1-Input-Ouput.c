@@ -73,6 +73,13 @@ void note3(){
          LED6 = !LED6;
      }
  }
+ void note8(){
+     for(char c = 150; c != 0; c--){
+         BEEPER = !BEEPER;
+         __delay_us(1203.948955);
+         LED5 = !LED5;
+     }
+ }
 int main(void)
 {
    // Configure oscillator and I/O ports. These functions run once at start-up.
@@ -199,6 +206,8 @@ int main(void)
                 note7();
                 __delay_ms(100);
 
+                }
+                if(SW4 == 0){
                 
                 }
               
@@ -312,7 +321,7 @@ int main(void)
  
 *    Test the code to ensure it works as expected. Does the order of the if
 *    conditions matter? (eg. swap the conditional checks for SW3 and SW4)
-*
+*    if both Switch pressed, both LED will turn it on but the order should matter.
 * 8. Next, replace the code from 7 with the following code which implements a
 *    logical AND conditional operator composed of two ampersands '&&':
        // Conditional 'AND' code
@@ -328,7 +337,7 @@ int main(void)
 *    Does '&&' work the same way as the nested if structures? Can you think of
 *    at least one advantage of using a logical conditional operator instead of
 *    nested if structures?
-*
+*    Like using  '==', '>=', '<='.
 * 9. Replace the double ampersand '&&' with double vertical bars '||)' to make
 *    a logical OR conditional operator. Your code should look like this:
         // Conditional 'OR' code
@@ -342,17 +351,18 @@ int main(void)
        }
  
 *    Describe the conditions under which LED4 turns on.
-*
+*   LED4 = 0 means it will turn off if there is a else statement.
 *
 * Programming Activities
 *
 * 1. The statement '__delay_ms(100);' creates a 100ms delay. Try changing one
 *    or more of the delay values in the program to 500ms and see what happens.
-*
+*    
 *    Can the delay be made even longer? Try 1000 ms. How big can the delay be
 *    before MPLAB-X produces an error message? (Hint: can you think of a fast
 *    and efficient way of guessing an unknown number?)
-*
+*     The delay can be made even longer and the limit before MPLAB-X produces an error message
+*     is __delay_ms(4205).
 * 2. The '__delay_ms();' function only accepts integers as delay values. To
 *    make delays shorter than 1ms, specify a delay in microseconds using the
 *    '__delay_us();' function. You won't be able to see such short LED flashes
@@ -370,7 +380,8 @@ int main(void)
 *    Try changing the delay values in both of the __delay_us(); functions.
 *    Does the pitch of the tone increase or decrease if the delay value is
 *    made smaller?
-*
+*   if the dealy value is smaller, the tone is a high pitch noise the more value is smaller
+*   the more pitch of the tone increase.
 * 3. This code demonstrates a more compact way of toggling the beeper output
 *    using a logical NOT operator '!'. Replace the code above, with this code:
        // Make a tone while SW5 is held
@@ -385,20 +396,21 @@ int main(void)
 *    be in after this code runs? While one advantage of this method is smaller
 *    code, can you think of one or more disadvantages based on its output when
 *    the button is released?
-*
+*    
 * 4. Using modified versions of the original SW2 'if' structure, create a
 *    program that makes a unique LED flashing pattern for each pushbutton.
 *
 *    Test each of your flashing patterns. Describe what happens when more than
 *    one button is held. Do all of the patterns try to flash the LEDs at the
 *    same time, or sequentially? Explain why this is.
-*
+*    If all patterns try to flashthe LEDs at the same time, it's going to be sequentially
+*    since if the other switch button is not coded to the program.
 * 5. Create a program that makes a different tone for each pushbutton.
 *
 *    Test each tone by pressing each button individually. Next, press two or
 *    more buttons at the same time. Describe what the tone waveform would look
 *    like when more than one button is held.
-*
+*     
 * 6. Use individual 'if' structures to simulate 'Start' and 'Stop' buttons for
 *    an industrial machine. LED D4 should turn on when SW3 is pressed, stay on
 *    even after SW3 is released, and turn off when SW4 is pressed. Test your
